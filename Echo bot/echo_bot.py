@@ -12,21 +12,20 @@ def bot():
     incoming_msg = request.values.get('Body','').lower()
     resp = MessagingResponse()
     msg = resp.message()
-    responded = False
+    #responded = False
     #print(str(resp))
-    if incoming_msg == "start" or "hello":
+    if incoming_msg == "hello":
         msg.body(emoji.emojize("""
         *Hi! I am an Echo Bot* :waving_hand:
         Let's be Friends :winking_face:
         I can reply back to you what you wrote to me. :speaking_head:
         With an Emoji attached. :winking_face:
         Nice to Meet You! :grinning_face_with_big_eyes:""", use_aliases=True))
-        responded = True
-    #else:
-    if not responded:
-        response = emoji.emojize(incoming_msg + " :robot:", use_aliases=True)
+        #responded = True
+    else:
+    #if not responded:
+        response = emoji.emojize(":robot:" + " : " + incoming_msg, use_aliases=True)
         msg.body(response)
-    
     return str(resp)
     
 if __name__ == '__main__':
