@@ -12,6 +12,7 @@ def bot():
     incoming_msg = request.values.get('Body','').lower()
     resp = MessagingResponse()
     msg = resp.message()
+    responded = False
     #print(str(resp))
     if incoming_msg == "start" or "hello":
         msg.body(emoji.emojize("""
@@ -20,7 +21,9 @@ def bot():
         I can reply back to you what you wrote to me. :speaking_head:
         With an Emoji attached. :winking_face:
         Nice to Meet You! :grinning_face_with_big_eyes:""", use_aliases=True))
-    else:
+        responded = True
+    #else:
+    if not responded:
         response = emoji.emojize(incoming_msg + " :robot:", use_aliases=True)
         msg.body(response)
     
