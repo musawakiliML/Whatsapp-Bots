@@ -12,7 +12,11 @@ def bot():
     msg = resp.message()
     msg.body(incoming_msg)
     #print(str(resp))
-    return str(resp)
+    if str(resp) == 'start':
+        return """I am an Echo Bot, by job is to reply back to you what
+        you wrote to me. Nice to Meet You!"""
+    else:
+        return str(resp)
     
 if __name__ == '__main__':
     app.run()
