@@ -11,8 +11,8 @@ def bot():
     resp = MessagingResponse()
     msg = resp.message()
     msg.body(incoming_msg)
+    print(str(resp))
     return str(resp)
     
 if __name__ == '__main__':
     app.run()
-
