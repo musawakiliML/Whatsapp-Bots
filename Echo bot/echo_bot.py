@@ -15,13 +15,15 @@ def bot():
     #print(str(resp))
     if incoming_msg == "start" or "hello":
         msg.body(emoji.emojize("""
-        *Hi! I am an Echo Bot* :wave:
-        Let's be Friends :wink:
-        I can reply back to you what you wrote to me. :speaking head:
-        With an Emoji attached. :wink:
-        Nice to Meet You! :grinning_face_with_big_eyes:"""))
+        *Hi! I am an Echo Bot* :waving_hand:
+        Let's be Friends :winking_face:
+        I can reply back to you what you wrote to me. :speaking_head:
+        With an Emoji attached. :winking_face:
+        Nice to Meet You! :grinning_face_with_big_eyes:""", use_aliases=True))
     else:
-        msg.body(emoji.emojize(incoming_msg+" :robot:"))
+        response = emoji.emojize(incoming_msg + " :robot:", use_aliases=True)
+        msg.body(response)
+    
     return str(resp)
     
 if __name__ == '__main__':
