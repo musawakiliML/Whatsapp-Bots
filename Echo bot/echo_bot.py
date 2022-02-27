@@ -13,12 +13,15 @@ def bot():
     resp = MessagingResponse()
     msg = resp.message()
     #print(str(resp))
-    if 'start' in incoming_msg:
-        msg.body("""I am an Echo Bot, 
-        my job is to reply back to you what
-        you wrote to me. Nice to Meet You!""")
+    if incoming_msg == "start" or "hello":
+        msg.body(emoji.emojize("""
+        *Hi! I am an Echo Bot* :wave:
+        Let's be Friends :wink:
+        I can reply back to you what you wrote to me. :speaking head:
+        With an Emoji attached. :wink:
+        Nice to Meet You! :grinning_face_with_big_eyes:"""))
     else:
-        msg.body(incoming_msg)
+        msg.body(emoji.emojize(incoming_msg+" :robot:"))
     return str(resp)
     
 if __name__ == '__main__':
