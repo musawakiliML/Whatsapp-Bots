@@ -10,13 +10,13 @@ def bot():
     incoming_msg = request.values.get('Body','').lower()
     resp = MessagingResponse()
     msg = resp.message()
-    msg.body(incoming_msg)
     #print(str(resp))
-    if msg.body(incoming_msg) == 'start':
-        return """I am an Echo Bot, by job is to reply back to you what
-        you wrote to me. Nice to Meet You!"""
+    if 'start' in incoming_msg:
+        msg.body("""I am an Echo Bot, by job is to reply back to you what
+        you wrote to me. Nice to Meet You!""")
     else:
-        return str(resp)
+        msg.body(incoming_msg)
+    return str(resp)
     
 if __name__ == '__main__':
     app.run()
