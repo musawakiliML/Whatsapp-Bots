@@ -24,7 +24,7 @@ def bot():
         #responded = True
     else:
     #if not responded:
-        response = emoji.emojize(":robot:" + " : " + incoming_msg, use_aliases=True)
+        response = emoji.emojize(":robot:" + " : Hi!, You Wrote '" + incoming_msg + "'", use_aliases=True)
         msg.body(response)
     return str(resp)
     
