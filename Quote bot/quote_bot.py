@@ -1,10 +1,10 @@
 from crypt import methods
+from distutils.log import debug
 from urllib import response
 from flask import Flask, request
 from twilio.twiml.messaging_response import MessagingResponse
 import requests
 import emoji
-
 
 app = Flask(__name__)
 
@@ -19,4 +19,4 @@ def bot():
     
     return str(response)
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
