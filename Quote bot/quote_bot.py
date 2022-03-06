@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 @app.route('/bot', methods=['POST'])
 def bot():
-    incoming_message = request.values.get("Body", )
+    incoming_message = request.values.get("Body", '').lower()
     response = MessagingResponse()
     message = response.message()
 
