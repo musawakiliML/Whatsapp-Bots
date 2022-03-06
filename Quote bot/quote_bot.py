@@ -1,4 +1,5 @@
 from crypt import methods
+from urllib import response
 from flask import Flask, request
 from twilio.twiml.messaging_response import MessagingResponse
 import requests
@@ -9,11 +10,13 @@ app = Flask(__name__)
 
 @app.route('/bot', methods=['POST'])
 def bot():
-    pass
+    incoming_message = request.values.get("Body", )
+    response = MessagingResponse()
+    message = response.message()
 
-
-
-
-
+    if incoming_message == 'hello':
+        message.body("Hello, i am a test bot")
+    
+    return str(response)
 if __name__ == "__main__":
     app.run()
