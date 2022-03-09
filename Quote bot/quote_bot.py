@@ -15,12 +15,11 @@ def bot():
     message = response.message()
 
     if incoming_message == 'hello':
-        message.body("Hello, i am a test bot")
+        message.body("""Hello, i am a Bot :robot: :
+        I can do the following things:
+        """)
     
     return str(response)
-
-
-
     
 if __name__ == "__main__":
     app.run(debug=True)
