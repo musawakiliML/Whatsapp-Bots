@@ -1,6 +1,3 @@
-from crypt import methods
-from distutils.log import debug
-from urllib import response
 from flask import Flask, request
 from twilio.twiml.messaging_response import MessagingResponse
 import requests
@@ -18,6 +15,8 @@ def bot():
         message.body("""Hello, i am a Bot :robot: :
         I can do the following things:
         """)
+    elif incoming_message == "aisha":
+        message.body(emoji.emojize("Hello Aishatunah :red_heart: \n You look glamorous :rose:"))
     
     return str(response)
     
