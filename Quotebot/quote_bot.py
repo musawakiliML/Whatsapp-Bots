@@ -27,9 +27,14 @@ def bot():
         elif "quote" in incoming_message:
             quote = utils.random_quote("quote")
             message.body(quote)
-        elif 
-        
+        else:
+            quote = utils.random_quote("")
+            message.body(quote)
+    elif "cat" in incoming_message:
+        cat_pic = utils.cat_dog(incoming_message)
+        message.media(cat_pic)
 
+    
     
     return str(response)
     

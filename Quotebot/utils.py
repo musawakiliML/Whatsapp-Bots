@@ -2,7 +2,7 @@ import requests
 
 
 def random_quote(type=''):
-    '''a function to get random quotes'''
+    '''A function to get random quotes'''
     if type == "today":
         response_quote = requests.get("https://zenquotes.io/api/today/ff5e73b15a05ca51951b758bd7943ce803d71772")
         if response_quote.status_code == 200:
@@ -25,11 +25,12 @@ def random_quote(type=''):
             return quote_message
         else:
             return f"Invalid Request {response_quote.status_code}"
-    elif type == "":
+    else:
+        return f"Invalid Request!"
 
 
 def jokes():
-    '''this function gets a joke'''
+    '''This function gets a joke'''
     response_joke = requests.get("https://some-random-api.ml/joke")
     if response_joke.status_code == 200:
         joke = response_joke.json()
@@ -44,9 +45,9 @@ def cat_dog(input_message):
         response_cat = requests.get("https://cataas.com/cat/cute")
         cat = response_cat.url
 
+        if "gif" in  input_message:
+            response_gif = requests.get("https://cataas.com/cat/gif")
+            cat_gif = response_gif.url
+            return cat_gif 
+            
         return cat
-    elif "gif" in  input_message:
-        response_gif = requests.get("https://cataas.com/cat/gif")
-        cat_gif = response_gif.url
-
-        return cat_gif
