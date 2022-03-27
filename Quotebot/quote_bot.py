@@ -12,15 +12,14 @@ def bot():
     response = MessagingResponse()
     message = response.message()
 
-    if incoming_message == 'hello' or "Hello":
-        message.body(emoji.emojize("""Hello, i am a Bot :robot: :
-        I can do the following things:
+    if incoming_message == 'hello' or incoming_message == "Hello":
+        message.body(emoji.emojize("""Hello, i am a Bot :robot: I can do the following things:
         1. Tell you Joke (Just type "joke")
-        2. Tell a Qoute(Just type "joke")
+        2. Tell a Qoute(Just type "quote" for random or "today quote" for the quote of the day)
         3. Show Pictures and Gif of animals (Just type a "cat" or "dog" or "gif cat")
         4. Get you a Meme :smiling_face:(just type the command "meme")
         """))
-    elif "quote" or "Quote" in incoming_message:
+    elif "quote" in incoming_message or "Quote" in incoming_message:
         #message.body(emoji.emojize("Hello Aishatunah :red_heart: \n You look glamorous :rose:"))
         quote = utils.random_quote()
         message.body(quote)
