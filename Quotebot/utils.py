@@ -12,6 +12,9 @@ def random_quote():
 
         return quote_message
 
+    else:
+        return f"Invalid Request {response_quote.status_code}"
+
 def jokes():
     '''this function gets a joke'''
     response_joke = requests.get("https://some-random-api.ml/joke")
@@ -20,6 +23,6 @@ def jokes():
 
         return joke['joke']
     else:
-        return f"Invalid Request {response_joke.status_code}"
+        
     
 
