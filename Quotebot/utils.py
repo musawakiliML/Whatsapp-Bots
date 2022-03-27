@@ -25,7 +25,7 @@ def random_quote(type=''):
             return quote_message
         else:
             return f"Invalid Request {response_quote.status_code}"
-    else:
+    elif type == "":
 
 
 def jokes():
