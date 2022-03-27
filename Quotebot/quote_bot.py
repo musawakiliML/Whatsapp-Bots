@@ -19,7 +19,7 @@ def bot():
         3.Show Pictures of animals (cat and dog)
         4.Get you a Meme(just type the command "meme")
         """)
-    elif incoming_message == "aisha":
+    elif incoming_message == :
         message.body(emoji.emojize("Hello Aishatunah :red_heart: \n You look glamorous :rose:"))
     
     return str(response)
