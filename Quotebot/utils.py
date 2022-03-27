@@ -3,7 +3,7 @@ import requests
 
 def random_quote():
     '''a function to get random quotes'''
-    response_quote = requests.get()
+    response_quote = requests.get("https://zenquotes.io/api/today/ff5e73b15a05ca51951b758bd7943ce803d71772")
     if response_quote.status_code == 200:
         quote_data = response_quote.json()
         quote = quote_data[0]['q']
@@ -11,8 +11,6 @@ def random_quote():
         quote_message = f"'{quote_author.title()}' Said:{quote}"
 
         return quote_message
-
-
 
 def jokes():
     '''this function gets a joke'''
