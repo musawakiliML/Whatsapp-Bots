@@ -1,4 +1,6 @@
+from wsgiref.util import request_uri
 import requests
+from sympy import re
 
 
 def random_quote():
@@ -28,4 +30,12 @@ def jokes():
 
 def cat_dog(input_message):
     if "cat" in input_message:
-        reponse_cat = requests.get()
+        response_cat = requests.get("https://cataas.com/cat/cute")
+        cat = response_cat.url
+
+        return cat
+    elif "gif" in  input_message:
+        response_gif = requests.get("https://cataas.com/cat/gif")
+        cat_gif = response_gif.url
+
+        return cat_gif
