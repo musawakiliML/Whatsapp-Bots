@@ -12,6 +12,7 @@ def random_quote(type=''):
             quote_message = f"'{quote_author.title()}' Said:{quote}"
 
             return quote_message
+
         else:
             return f"Invalid Request {response_quote.status_code}"
     elif type == "quote":
@@ -23,6 +24,7 @@ def random_quote(type=''):
             quote_message = f"'{quote_author.title()}' Said:{quote}"
 
             return quote_message
+
         else:
             return f"Invalid Request {response_quote.status_code}"
     else:
@@ -36,18 +38,27 @@ def jokes():
         joke = response_joke.json()
 
         return joke['joke']
+
     else:
         return f"Invalid Request {response_joke.status_code}"
 
 
 def cat_dog(input_message):
-    if "cat" in input_message:
+    if "cat" in input_message and "gif" in input_message:
+        response_gif = requests.get("https://cataas.com/cat")
+        cat_gif = response_gif.url
+        return cat_gif
+
+    elif "cat" in  input_message:
         response_cat = requests.get("https://cataas.com/cat/cute")
         cat = response_cat.url
-
-        if "gif" in  input_message:
-            response_gif = requests.get("https://cataas.com/cat/gif")
-            cat_gif = response_gif.url
-            return cat_gif 
-            
         return cat
+
+    elif "dog" in input_message:
+        response_dog = requests.get("https://dog.ceo/api/breeds/image/random")
+        dog_data = response_dog.json()['message']
+        return dog_data
+
+    else:
+        return "Invalid Request!"
+        

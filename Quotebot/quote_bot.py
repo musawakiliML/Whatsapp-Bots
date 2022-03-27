@@ -33,6 +33,13 @@ def bot():
     elif "cat" in incoming_message:
         cat_pic = utils.cat_dog(incoming_message)
         message.media(cat_pic)
+    elif "dog" in incoming_message:
+        dog_pic = utils.cat_dog(incoming_message)
+        message.media(dog_pic)
+        
+    elif "joke" in incoming_message:
+        random_joke = utils.jokes()
+        message.body(random_joke)
 
     return str(response)
     
