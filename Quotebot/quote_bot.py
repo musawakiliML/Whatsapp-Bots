@@ -13,13 +13,13 @@ def bot():
     message = response.message()
 
     if incoming_message == 'hello' or "Hello":
-        message.body("""Hello, i am a Bot :robot: :
+        message.body(emoji.emojize("""Hello, i am a Bot :robot: :
         I can do the following things:
-        1.Tell you Joke (Just type "joke")
-        2.Tell a Qoute(Just type "joke")
-        3.Show Pictures and Gif of animals (Just type a "cat" or "dog" or "gif cat")
-        4.Get you a Meme(just type the command "meme")
-        """)
+        1. Tell you Joke (Just type "joke")
+        2. Tell a Qoute(Just type "joke")
+        3. Show Pictures and Gif of animals (Just type a "cat" or "dog" or "gif cat")
+        4. Get you a Meme :smiling_face:(just type the command "meme")
+        """))
     elif "quote" or "Quote" in incoming_message:
         #message.body(emoji.emojize("Hello Aishatunah :red_heart: \n You look glamorous :rose:"))
         quote = utils.random_quote()
