@@ -11,7 +11,7 @@ def bot():
     response = MessagingResponse()
     message = response.message()
 
-    if incoming_message == 'hello':
+    if incoming_message == 'hello' or "Hello":
         message.body("""Hello, i am a Bot :robot: :
         I can do the following things:
         1.Tell you Joke (Just type "joke")
