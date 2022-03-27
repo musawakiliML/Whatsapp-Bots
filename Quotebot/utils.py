@@ -14,7 +14,7 @@ def random_quote():
 
 def jokes():
     '''this function gets a joke'''
-    response_joke = requests.get("")
+    response_joke = requests.get("https://some-random-api.ml/joke")
     if response_joke.status_code == 200:
         joke = response_joke.json()
 
