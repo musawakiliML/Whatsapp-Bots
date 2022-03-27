@@ -14,6 +14,8 @@ def bot():
     if incoming_message == 'hello':
         message.body("""Hello, i am a Bot :robot: :
         I can do the following things:
+        1.Tell you joke (Just type "joke")
+        2.Tell a Qoute
         """)
     elif incoming_message == "aisha":
         message.body(emoji.emojize("Hello Aishatunah :red_heart: \n You look glamorous :rose:"))
