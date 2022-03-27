@@ -23,6 +23,9 @@ def jokes():
 
         return joke['joke']
     else:
-        
-    
+        return f"Invalid Request {response_joke.status_code}"
 
+
+def cat_dog(input_message):
+    if "cat" in input_message:
+        reponse_cat = requests.get()
