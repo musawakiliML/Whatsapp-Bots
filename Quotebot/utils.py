@@ -1,6 +1,4 @@
-from wsgiref.util import request_uri
 import requests
-from sympy import re
 
 
 def random_quote():
@@ -13,7 +11,6 @@ def random_quote():
         quote_message = f"'{quote_author.title()}' Said:{quote}"
 
         return quote_message
-
     else:
         return f"Invalid Request {response_quote.status_code}"
 

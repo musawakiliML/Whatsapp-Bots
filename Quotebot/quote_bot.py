@@ -21,7 +21,9 @@ def bot():
         4.Get you a Meme(just type the command "meme")
         """)
     elif "quote" or "Quote" in incoming_message:
-        message.body(emoji.emojize("Hello Aishatunah :red_heart: \n You look glamorous :rose:"))
+        #message.body(emoji.emojize("Hello Aishatunah :red_heart: \n You look glamorous :rose:"))
+        quote = utils.random_quote()
+        message.body(quote)
     
     return str(response)
     
