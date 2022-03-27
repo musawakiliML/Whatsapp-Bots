@@ -34,8 +34,6 @@ def bot():
         cat_pic = utils.cat_dog(incoming_message)
         message.media(cat_pic)
 
-    
-    
     return str(response)
     
 if __name__ == "__main__":
