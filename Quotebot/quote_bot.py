@@ -2,6 +2,7 @@ from flask import Flask, request
 from twilio.twiml.messaging_response import MessagingResponse
 import requests
 import emoji
+import utils
 
 app = Flask(__name__)
 
@@ -16,10 +17,10 @@ def bot():
         I can do the following things:
         1.Tell you Joke (Just type "joke")
         2.Tell a Qoute(Just type "joke")
-        3.Show Pictures of animals (cat and dog)
+        3.Show Pictures and Gif of animals (Just type a "cat" or "dog" or "gif cat")
         4.Get you a Meme(just type the command "meme")
         """)
-    elif incoming_message == :
+    elif "quote" or "Quote" in incoming_message:
         message.body(emoji.emojize("Hello Aishatunah :red_heart: \n You look glamorous :rose:"))
     
     return str(response)
