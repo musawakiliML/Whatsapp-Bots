@@ -21,8 +21,15 @@ def bot():
         """))
     elif "quote" in incoming_message or "Quote" in incoming_message:
         #message.body(emoji.emojize("Hello Aishatunah :red_heart: \n You look glamorous :rose:"))
-        quote = utils.random_quote()
-        message.body(quote)
+        if "today" in incoming_message:
+            quote = utils.random_quote("today")
+            message.body(quote)
+        elif "quote" in incoming_message:
+            quote = utils.random_quote("quote")
+            message.body(quote)
+        elif 
+        
+
     
     return str(response)
     
