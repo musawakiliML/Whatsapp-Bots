@@ -32,11 +32,13 @@ def bot():
             message.body(quote)
     elif "cat" in incoming_message:
         cat_pic = utils.cat_dog(incoming_message)
+        message.body("A Cute Cat")
         message.media(cat_pic)
     elif "dog" in incoming_message:
         dog_pic = utils.cat_dog(incoming_message)
+        message.body("A Cute Dog")
         message.media(dog_pic)
-        
+
     elif "joke" in incoming_message:
         random_joke = utils.jokes()
         message.body(random_joke)
