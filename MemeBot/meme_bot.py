@@ -20,4 +20,4 @@ def bot():
 
 
 if "__name__" == "__main__":
-    bot.run(debug=True)
+    app.run(debug=True)
