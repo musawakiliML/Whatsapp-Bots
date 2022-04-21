@@ -1,7 +1,7 @@
-from email.mime import image
 import requests
 import urllib
 import random
+
 username = "MusaAdamuWakili"
 password = "meme_bot_1234"
 
@@ -18,3 +18,11 @@ def random_meme():
         return random_meme
     else:
         return f"Invalid Response:{data.status_code} Code"
+
+
+def main():
+    random_meme()
+
+
+# if "__name__" == "__main__":
+main()
