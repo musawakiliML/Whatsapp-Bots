@@ -13,6 +13,7 @@ def random_meme():
         meme_data = data.json()['data']['memes']
         images = [{'name': image['name'], 'url':image['url'],
                    'id':image['id']} for image in meme_data]
+
         random_meme_data = random.choice(images)
         random_meme_url = random_meme_data['url']
         random_meme_name = random_meme_data['name']
