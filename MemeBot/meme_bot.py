@@ -1,7 +1,3 @@
-from crypt import methods
-from email import message
-import re
-from urllib import response
 from flask import Flask, request
 import utils
 from twilio.twiml.messaging_response import MessagingResponse
@@ -21,3 +17,7 @@ def bot():
         message.body(meme[0])
 
     return str(response)
+
+
+if "__name__" == "__main__":
+    bot.run(debug=True)
