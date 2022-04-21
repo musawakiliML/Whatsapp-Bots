@@ -1,5 +1,4 @@
 import requests
-import urllib
 import random
 
 username = "MusaAdamuWakili"
@@ -15,14 +14,15 @@ def random_meme():
         images = [{'name': image['name'], 'url':image['url'],
                    'id':image['id']} for image in meme_data]
         random_meme = random.choice(images)['url']
-        return random_meme
+        return "helo"  # f"Url: {random_meme}"
     else:
         return f"Invalid Response:{data.status_code} Code"
 
 
-def main():
-    random_meme()
+random_meme()
+# def main():
+# random_meme()
 
 
 # if "__name__" == "__main__":
-main()
+# main()
