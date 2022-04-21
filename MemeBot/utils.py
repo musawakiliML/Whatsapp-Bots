@@ -14,12 +14,14 @@ def random_meme():
         images = [{'name': image['name'], 'url':image['url'],
                    'id':image['id']} for image in meme_data]
         random_meme = random.choice(images)['url']
-        return "helo"  # f"Url: {random_meme}"
+        return random_meme  # f"Url: {random_meme}"
     else:
         return f"Invalid Response:{data.status_code} Code"
 
 
-random_meme()
+h = random_meme()
+
+print(h)
 # def main():
 # random_meme()
 
