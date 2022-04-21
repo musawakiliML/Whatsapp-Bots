@@ -19,12 +19,9 @@ def random_meme():
         return f"Invalid Response:{data.status_code} Code"
 
 
-h = random_meme()
-
-print(h)
+#h = random_meme()
+# print(h)
 # def main():
 # random_meme()
-
-
 # if "__name__" == "__main__":
 # main()
