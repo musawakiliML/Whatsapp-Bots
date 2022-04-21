@@ -13,8 +13,11 @@ def random_meme():
         meme_data = data.json()['data']['memes']
         images = [{'name': image['name'], 'url':image['url'],
                    'id':image['id']} for image in meme_data]
-        random_meme = random.choice(images)['url']
-        return random_meme  # f"Url: {random_meme}"
+        random_meme_data = random.choice(images)
+        random_meme_url = random_meme_data['url']
+        random_meme_name = random_meme_data['name']
+
+        return [random_meme_name, random_meme_url]  # f"Url: {random_meme}"
     else:
         return f"Invalid Response:{data.status_code} Code"
 
