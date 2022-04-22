@@ -16,6 +16,8 @@ def bot():
         meme = utils.random_meme()
         message.media(meme[1])
         message.body(meme[0])
+    elif "create meme" in incoming_message or "2" in incoming_message:
+        message.body(f"{}Enter Index for a meme")
 
     return str(response)
 
