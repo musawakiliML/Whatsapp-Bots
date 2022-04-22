@@ -18,7 +18,8 @@ def random_meme():
         random_meme_url = random_meme_data['url']
         random_meme_name = random_meme_data['name']
 
-        return [random_meme_name, random_meme_url]  # f"Url: {random_meme}"
+        # f"Url: {random_meme}"
+        return [random_meme_name, random_meme_url, images['name']]
     else:
         return f"Invalid Response:{data.status_code} Code"
 
