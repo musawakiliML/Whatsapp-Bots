@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 import requests
 import random
 
@@ -23,6 +24,18 @@ def random_meme():
     else:
         return f"Invalid Response:{data.status_code} Code"
 
+
+def create_meme(input):
+
+    data = requests.get("https://api.imgflip.com/get_memes")
+    if data.status_code == 200:
+        meme_data = data.json()['data']['memes']
+        images = [{'name': image['name'], 'url':image['url'],
+                   'id':image['id']} for image in meme_data]
+        if "2" in input or "create meme" in input:
+            return [(index, image['name']) for index, image in enumerate(images)]
+    else:
+        return f"Invalid Response:{data.status_code} Code"
 
 #h = random_meme()
 # print(h)
