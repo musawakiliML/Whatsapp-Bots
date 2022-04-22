@@ -18,8 +18,9 @@ def bot():
         message.body(meme[0])
     elif "create meme" in incoming_message or "2" in incoming_message:
         new_meme = utils.create_meme(incoming_message)
-        message.body(
-            f"Enter Index for a meme\n{new_meme}")
+        message.body(f"Enter Index for a meme\n{new_meme}")
+        for i in new_meme:
+            message.body(i)
 
     return str(response)
 
