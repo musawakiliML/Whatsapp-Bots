@@ -32,8 +32,10 @@ def create_meme(input):
         meme_data = data.json()['data']['memes']
         images = [{'name': image['name'], 'url':image['url'],
                    'id':image['id']} for image in meme_data]
-        if "2" in input or "create meme" in input:
-            return [(index, image['name']) for index, image in enumerate(images)]
+        if "2" in input or "create" in input:
+            meme_data = [(index, image['name'])
+                         for index, image in enumerate(images)]
+            return meme_data
     else:
         return f"Invalid Response:{data.status_code} Code"
 
