@@ -10,8 +10,11 @@ def bot():
     incoming_message = request.values.get('Body', "").lower()
     response = MessagingResponse()
     message = response.message()
-
-    if "meme" in incoming_message:
+    if incoming_message == "Hello" or incoming_message == "hello":
+        message.body("This is a Meme Bot:\
+                    1. Random Meme\
+                    2. Create Meme. ")
+    elif "meme" in incoming_message:
         meme = utils.random_meme()
         message.media(meme[1])
         message.body(meme[0])
