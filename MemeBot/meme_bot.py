@@ -17,9 +17,11 @@ def bot():
         message.media(meme[1])
         message.body(meme[0])
     elif "create" in incoming_message or "2" in incoming_message:
-        new_meme = utils.create_meme(incoming_message)
-        message.body(f"Enter Index for a meme")
-        message.body(f"{str(new_meme[:50])}")
+        #new_meme = utils.create_meme(incoming_message)
+        message.body(f"Enter upper text and lower text for the meme:")
+        print(incoming_message)
+        # message.body(f"{str(new_meme[:50])}")
+
         # for i in new_meme
         # message.body(f"{i}")
 
