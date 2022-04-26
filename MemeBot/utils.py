@@ -28,21 +28,21 @@ def random_meme():
 def create_meme(input):
     URL = 'https://api.imgflip.com/caption_image'
     params = {
-    'username':username,
-    'password':password,
-    'template_id':images[id-1]['id'],
-    'text0':text0,
-    'text1':text1
+        'username': username,
+        'password': password,
+        'template_id': images[id-1]['id'],
+        'text0': text0,
+        'text1': text1
     }
 
     data = requests.get("https://api.imgflip.com/get_memes")
     if data.status_code == 200:
-        
+
     else:
         return f"Invalid Response:{data.status_code} Code"
 
 
-response = requests.request('POST',URL,params=params).json()
+response = requests.request('POST', URL, params=params).json()
 print(response)
 #h = random_meme()
 # print(h)
