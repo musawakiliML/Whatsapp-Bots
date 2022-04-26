@@ -1,6 +1,3 @@
-from crypt import methods
-from textwrap import shorten
-from types import MethodDescriptorType
 from flask import Flask, request
 from twilio.twiml.messaging_response import MessagingResponse
 import utils
