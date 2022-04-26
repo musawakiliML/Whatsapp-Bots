@@ -14,8 +14,8 @@ def bot():
     incoming_message = request.values.get("Body", '').lower()
     bot_response = MessagingResponse()
     bot_message = bot_response.message()
-    print(incoming_message)
-    print(type(incoming_message))
+    # print(incoming_message)
+    # print(type(incoming_message))
     if "start" in incoming_message:
         bot_message.body(emoji.emojize("""
         *Hi! I am a Url Shortner Bot* :waving_hand:\

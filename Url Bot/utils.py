@@ -1,6 +1,6 @@
 import requests
 from urllib.parse import urlparse
-
+import pyqrcode
 # your account details
 username = "o_36um82e226"
 password = "pro244grammer."
@@ -61,6 +61,10 @@ def validate_link(link):
             return False
     except ValueError:
         return False
+
+
+def url_to_qrcode(url):
+    qr_code = pyqrcode.create(url)
 
 
 # shorten_url("https://www.linkedin.com/in/musa-adamu-wakili-711704154/")
